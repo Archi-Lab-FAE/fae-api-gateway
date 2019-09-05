@@ -1,0 +1,53 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PATCH
+              - PUT
+              - DELETE
+              - OPTIONS
+              - HEAD
+            allowedHeaders: "*"
+      routes:
+        - id: learning-outcomes
+          uri: http://localhost:8081
+          predicates:
+            - Path=/learningOutcomes, /learningOutcomes/**
+        - id: learning-spaces
+          uri: http://localhost:8081
+          predicates:
+            - Path=/learningSpaces, /learningSpaces/**
+        - id: courses
+          uri: http://localhost:8081
+          predicates:
+            - Path=/courses, /courses/**
+        - id: web-links
+          uri: http://localhost:8082
+          predicates:
+            - Path=/webLinkResources, /webLinkResources/**
+        - id: predefined-exam-forms
+          uri: http://localhost:8081
+          predicates:
+            - Path=/predefinedExamForms, /predefinedExamForms/**
+        - id: comments
+          uri: http://localhost:8083
+          predicates:
+            - Path=/comments, /comments/**
+
+# Eureka
+eureka:
+  client:
+    enabled: false

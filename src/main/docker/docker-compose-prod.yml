@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+  springcloud-gateway:
+    image: docker.nexus.archi-lab.io/archilab/fae-api-gateway:${BUILD_ID}
+    deploy:
+      replicas: 2
+      update_config:
+        parallelism: 1
+        delay: 10s
+        order: start-first
+      restart_policy:
+        condition: any
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    environment:
+      - TZ=Europe/Berlin
+      - SPRING_PROFILES_ACTIVE=prod
+    networks:
+      - fae_backend
+networks:
+  fae_backend:
+    external: true

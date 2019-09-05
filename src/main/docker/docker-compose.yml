@@ -1,0 +1,13 @@
+version: '3.4'
+services:
+  springcloud-gateway:
+    image: docker.nexus.archi-lab.io/archilab/fae-api-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      - TZ=Europe/Berlin
+    networks:
+      - fae_backend
+networks:
+  fae_backend:
+    external: true
