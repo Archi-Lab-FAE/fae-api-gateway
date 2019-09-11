@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   springcloud-gateway:
-    image: docker.nexus.archi-lab.io/archilab/fae-api-gateway:${BUILD_ID}
+    image: docker.nexus.archi-lab.io/archilab/fae-api-gateway:${TAG}
     deploy:
       replicas: 2
       update_config:
