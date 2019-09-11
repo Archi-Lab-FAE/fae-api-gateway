@@ -22,32 +22,16 @@ spring:
               - HEAD
             allowedHeaders: "*"
       routes:
-        - id: learning-outcomes
+        - id: products
           uri: http://localhost:8081
           predicates:
-            - Path=/learningOutcomes, /learningOutcomes/**
-        - id: learning-spaces
+            - Path=/shop-demo/products**, /shop-demo/level-2/products**
+        - id: orders
           uri: http://localhost:8081
           predicates:
-            - Path=/learningSpaces, /learningSpaces/**
-        - id: courses
-          uri: http://localhost:8081
-          predicates:
-            - Path=/courses, /courses/**
-        - id: web-links
-          uri: http://localhost:8082
-          predicates:
-            - Path=/webLinkResources, /webLinkResources/**
-        - id: predefined-exam-forms
-          uri: http://localhost:8081
-          predicates:
-            - Path=/predefinedExamForms, /predefinedExamForms/**
-        - id: comments
-          uri: http://localhost:8083
-          predicates:
-            - Path=/comments, /comments/**
+            - Path=/shop-demo/orders**, /shop-demo/level-2/orders**
 
 # Eureka
 eureka:
   client:
-    enabled: false
+    enabled: true

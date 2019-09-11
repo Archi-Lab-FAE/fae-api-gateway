@@ -22,30 +22,15 @@ spring:
               - HEAD
             allowedHeaders: "*"
       routes:
-        - id: learning-outcomes
-          uri: lb://learning-outcome-ms
+        - id: products
+          uri: lb://shop-demo-ms
           predicates:
-            - Path=/learningOutcomes, /learningOutcomes/**
-        - id: learning-spaces
-          uri: lb://learning-outcome-ms
+            - Path=/shop-demo/products**, /shop-demo/level-2/products**
+        - id: orders
+          uri: lb://shop-demo-ms
           predicates:
-            - Path=/learningSpaces, /learningSpaces/**
-        - id: courses
-          uri: lb://learning-outcome-ms
-          predicates:
-            - Path=/courses, /courses/**
-        - id: web-links
-          uri: lb://resource-ms
-          predicates:
-            - Path=/webLinkResources, /webLinkResources/**
-        - id: predefined-exam-forms
-          uri: lb://learning-outcome-ms
-          predicates:
-            - Path=/predefinedExamForms, /predefinedExamForms/**
-        - id: comments
-          uri: lb://comment-ms
-          predicates:
-            - Path=/comments, /comments/**
+            - Path=/shop-demo/orders**, /shop-demo/level-2/orders**
+
 # Eureka
 eureka:
   client:
