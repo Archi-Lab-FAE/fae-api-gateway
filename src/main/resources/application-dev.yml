@@ -25,15 +25,15 @@ spring:
         - id: products
           uri: lb://shop-demo-ms
           predicates:
-            - Path=/shop-demo/products**, /shop-demo/level-2/products**
+            - Path=/shop-demo/products/**, /shop-demo/level-2/products/**
         - id: orders
           uri: lb://shop-demo-ms
           predicates:
-            - Path=/shop-demo/orders**, /shop-demo/level-2/orders**
+            - Path=/shop-demo/orders/**, /shop-demo/level-2/orders/**
         - id: productEventInformations
           uri: lb://shop-demo-ms
           predicates:
-            - Path=/shop-demo/productEventInformations**
+            - Path=/shop-demo/productEventInformations/**
 
 # Eureka
 eureka:
