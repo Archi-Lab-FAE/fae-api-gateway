@@ -30,6 +30,10 @@ spring:
           uri: lb://shop-demo-ms
           predicates:
             - Path=/shop-demo/orders**, /shop-demo/level-2/orders**
+        - id: productEventInformations
+          uri: lb://shop-demo-ms
+          predicates:
+            - Path=/shop-demo/productEventInformations**
 
 # Eureka
 eureka:
