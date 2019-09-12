@@ -12,7 +12,6 @@ spring:
       x-forwarded:
         proto-enabled: true
         proto-append: true
-        host-append: true
         enabled: true
         port-enabled: false
 
