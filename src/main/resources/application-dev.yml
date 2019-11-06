@@ -33,7 +33,7 @@ spring:
         - id: profiles
             uri: lb://shop-demo-ms
             predicates:
-              - Path=/profile/**
+              - Path=/shop-demo/profile/**
         - id: productEventInformations
           uri: lb://shop-demo-ms
           predicates:
