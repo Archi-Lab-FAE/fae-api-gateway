@@ -31,9 +31,9 @@ spring:
           predicates:
             - Path=/shop-demo/orders/**, /shop-demo/level-2/orders/**
         - id: profiles
-            uri: lb://shop-demo-ms
-            predicates:
-              - Path=/shop-demo/profile/**
+          uri: lb://shop-demo-ms
+          predicates:
+            - Path=/shop-demo/profile/**
         - id: productEventInformations
           uri: lb://shop-demo-ms
           predicates:
