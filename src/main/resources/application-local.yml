@@ -30,6 +30,10 @@ spring:
           uri: http://localhost:8081
           predicates:
             - Path=/shop-demo/orders/**, /shop-demo/level-2/orders/**
+        - id: profiles
+            uri: lb://shop-demo-ms
+            predicates:
+              - Path=/shop-demo/profile/**
         - id: productEventInformations
           uri: http://localhost:8081
           predicates:
