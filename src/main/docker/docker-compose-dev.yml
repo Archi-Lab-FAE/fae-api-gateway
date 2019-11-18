@@ -1,4 +1,5 @@
-version: '3.4'
+version: "3.7"
+
 services:
   springcloud-gateway:
     image: docker.nexus.archi-lab.io/archilab/fae-api-gateway
@@ -9,6 +10,7 @@ services:
       - SPRING_PROFILES_ACTIVE=dev
     networks:
       - fae_backend
+
 networks:
   fae_backend:
     external: true

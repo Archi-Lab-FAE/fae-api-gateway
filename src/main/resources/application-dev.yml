@@ -10,7 +10,7 @@ spring:
           lowerCaseServiceId: true
       globalcors:
         corsConfigurations:
-          '[/**]':
+          "[/**]":
             allowedOrigins: "*"
             allowedMethods:
               - GET
@@ -39,7 +39,6 @@ spring:
           predicates:
             - Path=/shop-demo/productEventInformations/**
 
-# Eureka
 eureka:
   client:
     serviceUrl:

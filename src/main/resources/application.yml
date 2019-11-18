@@ -23,7 +23,6 @@ logging:
     reactor.ipc.netty: DEBUG
     reactor.netty: DEBUG
 
-
 management:
   endpoints:
     web:
