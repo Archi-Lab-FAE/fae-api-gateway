@@ -8,7 +8,7 @@ CURRENT="$(
 # Start service
 docker-compose -p gateway \
   -f "$CURRENT/src/main/docker/docker-compose.yml" \
-  -f "$CURRENT/src/main/docker/docker-compose-dev.yml" \
+  -f "$CURRENT/src/main/docker/docker-compose.dev.yml" \
   down
 
 # Remove network
