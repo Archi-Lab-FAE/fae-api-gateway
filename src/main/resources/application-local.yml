@@ -22,22 +22,10 @@ spring:
               - HEAD
             allowedHeaders: "*"
       routes:
-        - id: products
+        - id: shop-demo
           uri: http://localhost:8081
           predicates:
-            - Path=/shop-demo/products/**, /shop-demo/level-2/products/**
-        - id: orders
-          uri: http://localhost:8081
-          predicates:
-            - Path=/shop-demo/orders/**, /shop-demo/level-2/orders/**
-        - id: profiles
-          uri: lb://shop-demo-ms
-          predicates:
-            - Path=/shop-demo/profile/**
-        - id: productEventInformations
-          uri: http://localhost:8081
-          predicates:
-            - Path=/shop-demo/productEventInformations/**
+            - Path=/shop-demo/**
 
 eureka:
   client:
