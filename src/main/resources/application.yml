@@ -30,7 +30,7 @@ spring:
         - id: team-3
           uri: lb://fae-team-3-service
           predicates:
-            - Path=/team-3, /team-3/**
+            - Path=//team-3/**
         - id: team-4
           uri: lb://team4-service-ms
           predicates:
