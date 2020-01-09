@@ -14,6 +14,27 @@ spring:
         proto-append: true
         enabled: true
         port-enabled: false
+      routes:
+        - id: shop-demo
+          uri: lb://shop-demo-ms
+          predicates:
+            - Path=/shop-demo/**
+        - id: team-1
+          uri: lb://fae-team-1-service-ms
+          predicates:
+            - Path=/team-1/**
+        - id: team-2
+          uri: lb://fae-team-2-service
+          predicates:
+            - Path=/team-2/**
+        - id: team-3
+          uri: lb://fae-team-3-service
+          predicates:
+            - Path=/team-3/**
+        - id: team-4
+          uri: lb://team4-service-ms
+          predicates:
+            - Path=/team-4/**
 
 logging:
   level:
