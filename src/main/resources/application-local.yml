@@ -21,11 +21,6 @@ spring:
               - OPTIONS
               - HEAD
             allowedHeaders: "*"
-      routes:
-        - id: shop-demo
-          uri: http://localhost:8081
-          predicates:
-            - Path=/shop-demo/**
 
 eureka:
   client:
